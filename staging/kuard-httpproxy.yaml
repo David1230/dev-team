@@ -6,6 +6,7 @@ metadata:
   name: kuard
   annotations:
     projectcontour.io/ingress.class: contour-internal
+  namespace: demo
 spec:
   virtualhost:
     fqdn: kuard.babylon-dev.loc
