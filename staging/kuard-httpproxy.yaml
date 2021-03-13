@@ -14,3 +14,19 @@ spec:
   - services:
     - name: kuard
       port: 8080
+
+---
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  labels:
+    app: kuard-ext
+  name: kuard-ext
+  namespace: demo
+spec:
+  virtualhost:
+    fqdn: kuard-ext.babylon-dev.loc
+  routes:
+  - services:
+    - name: kuard
+      port: 8080
