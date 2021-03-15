@@ -31,3 +31,9 @@ spec:
     services:
     - name: graylog-external
       port: 9000
+    requestHeadersPolicy:
+      set:
+      - name: Host
+        value: graylog-test.babylon-dev.loc
+      - name: X-Graylog-Server-URL
+        value: http://graylog-test-ui.babylon-dev.loc
