@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../base
   - kuard-httpproxy.yaml
+  - graylog-external.yaml
 patchesStrategicMerge:
