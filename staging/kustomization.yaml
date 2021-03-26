@@ -4,4 +4,5 @@ resources:
   - ../base
   - kuard-httpproxy.yaml
   - graylog-external.yaml
+  - fakelogs-deploy.yaml
 patchesStrategicMerge:
