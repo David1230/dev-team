@@ -54,7 +54,7 @@ data:
         Gelf_Short_Message_Key  data
   parsers_springboot.conf: |-
     [PARSER]
-        Name        docker
+        Name        springboot
         Format      json
         Regex       /^(?<date>[0-9]+-[0-9]+-[0-9]+\s+[0-9]+:[0-9]+:[0-9]+.[0-9]+)\s+(?<log_level>[Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|INFO|[Ww]arn?(?:ing)?|WARN?(?:ING)?|[Ee]rr?(?:or)?|ERR?(?:OR)?|[Cc]rit?(?:ical)?|CRIT?(?:ICAL)?|[Ff]atal|FATAL|[Ss]evere|SEVERE|EMERG(?:ENCY)?|[Ee]merg(?:ency)?)\s+(?<pid>[0-9]+)\s+---\s+\[(?<thread>.*)\]\s+(?<class_name>.*)\s+:\s+(?<message>.*)$/
         Time_Key    time
