@@ -25,7 +25,8 @@ spec:
           allowPrivilegeEscalation: false
           runAsUser: 1000
       - name: fluentbit
-        image: fluent/fluent-bit:1.0.6
+#       image: fluent/fluent-bit:1.0.6
+        image: fluent/fluent-bit:1.7
         volumeMounts:
         - name: log-volume
           mountPath: /app/log
