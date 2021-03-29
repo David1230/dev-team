@@ -37,19 +37,16 @@ data:
         Parser_Firstline springboot
 
     [OUTPUT]
-        Name  es
+        Name  gelf
         Match *
-        Host  elasticsearch.efk.svc.cluster.local
-        Port  9200
-        Logstash_Format On
-        Retry_Limit False
-        Type  flb_type
-        Time_Key @timestamp
-        Logstash_Prefix fakelogs
+        Host graylog-test.babylon-dev.loc
+        Port 12201
+        Mode ucp
+        Gelf_Short_Message_Key  data
   parsers_springboot.conf: |-
     [PARSER]
-        Name        springboot
-        Format      regex
+        Name        docker
+        Format      json
         Regex       /^(?<date>[0-9]+-[0-9]+-[0-9]+\s+[0-9]+:[0-9]+:[0-9]+.[0-9]+)\s+(?<log_level>[Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|INFO|[Ww]arn?(?:ing)?|WARN?(?:ING)?|[Ee]rr?(?:or)?|ERR?(?:OR)?|[Cc]rit?(?:ical)?|CRIT?(?:ICAL)?|[Ff]atal|FATAL|[Ss]evere|SEVERE|EMERG(?:ENCY)?|[Ee]merg(?:ency)?)\s+(?<pid>[0-9]+)\s+---\s+\[(?<thread>.*)\]\s+(?<class_name>.*)\s+:\s+(?<message>.*)$/
         Time_Key    time
         Time_Format %Y-%m-%

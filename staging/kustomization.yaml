@@ -5,4 +5,5 @@ resources:
   - kuard-httpproxy.yaml
   - graylog-external.yaml
   - fakelogs-deploy.yaml
+  - fluent-bit-config.yaml
 patchesStrategicMerge:
