@@ -24,10 +24,18 @@ data:
             create 0640 root root
     }
   fluent-bit.conf: |-
+    [SERVICE]
+        Flush        1
+        Daemon       Off
+        Log_Level    info
+        Parsers_File parsers_springboot.conf
+
     [INPUT]
         Name             tail
         Path             /app/log/app.log
         Multiline        on
+        Parser_Firstline springboot
+
     [FILTER]
         Name                    kubernetes
         Match                   *.log
@@ -44,7 +52,7 @@ data:
         Port                    12201
         Mode                    udp
         Gelf_Short_Message_Key  data
-
+  parsers_springboot.conf: |-
     [PARSER]
         Name        docker
         Format      json
