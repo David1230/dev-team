@@ -24,15 +24,18 @@ data:
             create 0640 root root
     }
   fluent-bit.conf: |-
-    [SERVICE]
-        Flush        1
-        Daemon       Off
-        Log_Level    info
-
     [INPUT]
         Name             tail
         Path             /app/log/app.log
         Multiline        on
+    [FILTER]
+        Name                    kubernetes
+        Match                   *.log
+        Merge_Log_Key           log
+        Merge_Log               On
+        Keep_Log                Off
+        Annotations             Off
+        Labels                  Off
 
     [OUTPUT]
         Name                    gelf
