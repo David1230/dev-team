@@ -33,7 +33,7 @@ data:
     [INPUT]
         Name             tail
         Path             /app/log/app.log
-        Multiline        off
+        Multiline        on
         Parser_Firstline springboot
 
     [FILTER]
