@@ -55,6 +55,6 @@ data:
     [PARSER]
         Name        springboot
         Format      regex
-        Regex       /(?<time>Dec \d+ \d+\:\d+\:\d+)(?<message>.*)/
+        Regex       /(?<time> \d+\-\d+\-\d+ \d+\:\d+\:\d+)(?<message>.*)/
         Time_Key    time
         Time_Format %Y-%m-%d
